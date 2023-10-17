@@ -13,7 +13,7 @@ namespace WpfApp1.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=STHQ0123-02;Initial Catalog=Library;User ID=admin;Password=admin;Connect Timeout=30;Encrypt=False;");
+            optionsBuilder.UseSqlServer("Data Source=STHQ0124-07;Initial Catalog=Library;User ID=admin;Password=admin;Connect Timeout=30;Encrypt=False;");
             base.OnConfiguring(optionsBuilder);
             
         }
@@ -51,6 +51,7 @@ namespace WpfApp1.Context
         public List<T_Card> T_Cards { get; set; }
         public List<Teacher> Teachers { get; set; }
         public List<Theme> Themes { get; set; }
+        public List<Theme> Themesa { get; set; }
 
     }
 }

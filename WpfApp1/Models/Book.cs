@@ -8,7 +8,7 @@ namespace WpfApp1.Models
 {
     public class Book : BaseEntity
     {
-        public Book(int id ,string name, int pages, DateTime yearPress, int themesId, int categoryId, int authorId, int pressId, string comment, int quantity)
+        public Book(int id ,string name, int pages, DateTime yearPress ,  DateTime CreatedDT, DateTime ModeifiredDT , int themesId, int categoryId, int authorId, int pressId, string comment, int quantity)
         {
             ID = id;
             Name = name;
@@ -20,6 +20,8 @@ namespace WpfApp1.Models
             PressId = pressId;
             Comment = comment;
             Quantity = quantity;
+            CreatedDate = CreatedDT;
+            ModifiedDate = ModeifiredDT;
         }
         public Book()
         {

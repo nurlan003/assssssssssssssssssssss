@@ -1,20 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using WpfApp1.Models;
 using WpfApp1.Context;
+using WpfApp1.Models;
 
 namespace WpfApp1
 {
@@ -23,13 +11,14 @@ namespace WpfApp1
     /// </summary>
     ///       
 
-public partial class MainWindow : Window
+    public partial class MainWindow : Window
     {
         public string Name { get; set; }
         public int ID { get; set; }
         public int Pages { get; set; }
         public DateTime YearPress { get; set; }
         public DateTime CreatedDate { get; set; }
+        public DateTime ModifiredDate { get; set; }
 
         public int ThemesId { get; set; }
         public int CategoryId { get; set; }
@@ -64,6 +53,7 @@ public partial class MainWindow : Window
 
             YearPress = YearPressDT.SelectedDate ?? DateTime.MinValue;
            CreatedDate = CreatedDateDT.SelectedDate ?? DateTime.MinValue;
+          ModifiredDate = ModifiredDateDT.SelectedDate ?? DateTime.MinValue;
 
             if (int.TryParse(ThemesIDBox.Text, out int TT))
             {
@@ -87,12 +77,31 @@ public partial class MainWindow : Window
             }
             Comment = CommentBox.Text;
 
+     
 
-      
+            using (var context = new LibraryDBContext())
+            {
+                var newBook = new Book
+                {
+                    ID = ID,
+                    Name = Name,
+                    AuthorId = AuthorId,
+                    CategoryId = CategoryId,
+                    Comment = Comment,
+                    CreatedDate = CreatedDate,
+                    ModifiedDate = ModifiredDate,
+                    Pages = Pages,
+                    PressId = PressId,
+                    Quantity = Quantity,
+                    ThemesId = ThemesId,
+                    YearPress = YearPress
+            };
+                List<Book> books = new List<Book>();    
+                context.Books = books;
+                context.SaveChanges();
+            }
 
-            Book newBook = new Book(ID, Name, Pages, YearPress, ThemesId, CategoryId, AuthorId, PressId, Comment, Quantity);
-            AddBookCS.AddBookFC(newBook);
-           
+
         }
     }
 }

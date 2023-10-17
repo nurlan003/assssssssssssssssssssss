@@ -12,7 +12,7 @@ namespace WpfApp1.Models
 
         public int ID { get; set; }
 
-        public DateTime CreatedDate = DateTime.Now;
+        public DateTime CreatedDate { get; set; }
 
         public DateTime? ModifiedDate { get; set; }
 
