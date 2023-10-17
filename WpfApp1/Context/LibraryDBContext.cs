@@ -13,7 +13,7 @@ namespace WpfApp1.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=STHQ0128-15;Initial Catalog=Library;User ID=admin;Password=admin;Connect Timeout=30;Encrypt=False;");
+            optionsBuilder.UseSqlServer("Data Source=STHQ0123-02;Initial Catalog=Library;User ID=admin;Password=admin;Connect Timeout=30;Encrypt=False;");
             base.OnConfiguring(optionsBuilder);
             
         }
@@ -39,7 +39,7 @@ namespace WpfApp1.Context
 
 
         public List<Author> Authors { get; set; }
-        public List<Book> Books { get; set; }
+        public List<Book?> Books { get; set; }
         public List<Category> Categories { get; set; }
         public List<Department> Departments { get; set; }
         public List<Faculty> Faculties { get; set; }

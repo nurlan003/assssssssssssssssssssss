@@ -7,6 +7,32 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Button Content="ADD Books" HorizontalAlignment="Left" Margin="348,359,0,0" VerticalAlignment="Top" Width="121" Height="34" Click="Button_Click" />
+        
+        <TextBox x:Name="NameBox" HorizontalAlignment="Left" Margin="26,19,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="IDBox" HorizontalAlignment="Left" Margin="189,19,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="120"/>
+        
+        
+        <TextBox x:Name="PressIDBox" HorizontalAlignment="Left" Margin="26,292,0,0" TextWrapping="Wrap" Text="PressID" VerticalAlignment="Top" Width="120"/>
+
+        <TextBox x:Name="AuthorIDBox" HorizontalAlignment="Left" Margin="26,251,0,0" TextWrapping="Wrap" Text="AuthorID" VerticalAlignment="Top" Width="120"/>
+
+        <TextBox x:Name="CategoryIDBox" HorizontalAlignment="Left" Margin="26,217,0,0" TextWrapping="Wrap" Text="CategoryID" VerticalAlignment="Top" Width="120"/>
+
+        <TextBox  x:Name="ThemesIDBox" HorizontalAlignment="Left" Margin="26,173,0,0" TextWrapping="Wrap" Text="ThemesID" VerticalAlignment="Top" Width="120"/>
+
+        <TextBox  x:Name="PagesBox" HorizontalAlignment="Left" Margin="26,99,0,0" TextWrapping="Wrap" Text="Pages" VerticalAlignment="Top" Width="120"/>
+        
+        <TextBox x:Name="CommentBox" HorizontalAlignment="Left" Margin="26,367,0,0" TextWrapping="Wrap" Text="Comment" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.958,6.906"/>
+        
+        <TextBox x:Name="QuantityBox" HorizontalAlignment="Left" Margin="26,327,0,0" TextWrapping="Wrap" Text="Quantity" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.958,6.906"/>
+        
+        <DatePicker x:Name="YearPressDT"  HorizontalAlignment="Left" Margin="26,54,0,0" VerticalAlignment="Top" Width="111"/>
+        
+        <DatePicker  x:Name="CreatedDateDT"  HorizontalAlignment="Left" Margin="26,133,0,0" VerticalAlignment="Top" Width="111"/>
+        <TextBlock HorizontalAlignment="Left" Margin="156,62,0,0" TextWrapping="Wrap" Text="YearPress" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="156,137,0,0" TextWrapping="Wrap" Text="CreatedDate" VerticalAlignment="Top"/>
+
 
     </Grid>
 </Window>
